@@ -8,8 +8,10 @@ const title: React.CSSProperties = {
 	fontSize: 100,
 	textAlign: 'center',
 	position: 'absolute',
-	bottom: 160,
+	bottom: "50%",
+	transform: "translatey(50%)",
 	width: '100%',
+	padding: 18
 };
 
 const word: React.CSSProperties = {
@@ -26,17 +28,18 @@ export const Title: React.FC<{
 	const frame = useCurrentFrame();
 
 	const words = titleText.split(' ');
+	const delayOffset = 10;
 
 	return (
 		<h1 style={title}>
 			{words.map((t, i) => {
-				const delay = i * 5;
+				const delay = i * delayOffset;
 
 				const scale = spring({
 					fps: videoConfig.fps,
 					frame: frame - delay,
 					config: {
-						damping: 200,
+						damping: 10,
 					},
 				});
 
