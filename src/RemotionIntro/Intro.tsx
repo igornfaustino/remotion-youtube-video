@@ -7,11 +7,11 @@ import {
 	Img
 
 } from 'remotion';
-import {Subtitle} from './RemotionIntro/Subtitle';
-import {Title} from './RemotionIntro/Title';
+import {Subtitle} from './Subtitle';
+import {Title} from './Title';
 import {z} from 'zod';
 import {zColor} from '@remotion/zod-types';
-import RemotionLogo from './RemotionIntro/RemotionLogo';
+import RemotionLogo from './RemotionLogo';
 
 export const myCompSchema = z.object({
 	titleText: z.string(),
