@@ -1,6 +1,6 @@
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {FONT_FAMILY} from './constants';
+import { spring, useCurrentFrame, useVideoConfig } from 'remotion';
+import { FONT_FAMILY } from './constants';
 
 const title: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
@@ -23,7 +23,7 @@ const word: React.CSSProperties = {
 export const Title: React.FC<{
 	titleText: string;
 	titleColor: string;
-}> = ({titleText, titleColor}) => {
+}> = ({ titleText, titleColor }) => {
 	const videoConfig = useVideoConfig();
 	const frame = useCurrentFrame();
 
@@ -39,7 +39,7 @@ export const Title: React.FC<{
 					fps: videoConfig.fps,
 					frame: frame - delay,
 					config: {
-						damping: 10,
+						damping: 200,
 					},
 				});
 

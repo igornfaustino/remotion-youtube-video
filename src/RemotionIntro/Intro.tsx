@@ -1,26 +1,22 @@
+import { zColor } from '@remotion/zod-types';
 import {
 	AbsoluteFill,
 	interpolate,
-	Sequence,
-	staticFile,
-	useCurrentFrame,
-	Img
-
+	Sequence, useCurrentFrame
 } from 'remotion';
-import {Subtitle} from './Subtitle';
-import {Title} from './Title';
-import {z} from 'zod';
-import {zColor} from '@remotion/zod-types';
+import { z } from 'zod';
 import RemotionLogo from './RemotionLogo';
+import { Subtitle } from './Subtitle';
+import { Title } from './Title';
 
-export const myCompSchema = z.object({
+export const IntroSchema = z.object({
 	titleText: z.string(),
 	titleColor: zColor(),
 	logoColor1: zColor(),
 	logoColor2: zColor(),
 });
 
-export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
+export const RemotionIntro: React.FC<z.infer<typeof IntroSchema>> = ({
 	titleText: propOne,
 	titleColor: propTwo,
 }) => {
@@ -39,9 +35,9 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
 
 	// A <AbsoluteFill> is just a absolutely positioned <div>!
 	return (
-		<AbsoluteFill style={{backgroundColor: 'white'}}>
+		<AbsoluteFill style={{ backgroundColor: 'white' }}>
 			<Sequence durationInFrames={125}>
-				<AbsoluteFill style={{opacity: outTransition}}>
+				<AbsoluteFill style={{ opacity: outTransition }}>
 					<Title titleText={propOne} titleColor={propTwo} />
 				</AbsoluteFill>
 			</Sequence>
