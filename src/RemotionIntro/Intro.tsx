@@ -12,8 +12,6 @@ import { Title } from './Title';
 export const IntroSchema = z.object({
 	titleText: z.string(),
 	titleColor: zColor(),
-	logoColor1: zColor(),
-	logoColor2: zColor(),
 });
 
 export const RemotionIntro: React.FC<z.infer<typeof IntroSchema>> = ({
